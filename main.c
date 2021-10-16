@@ -16,7 +16,7 @@ struct Location *makeLocation(char *name, float latitude, float longitude)
 {
     struct Location *l = malloc(sizeof(struct Location));
 
-    strcopy(l->name, name);
+    strcpy(l->name, name);
     l->latitude = latitude;
     l->longitude = longitude;
     l->next = 0;
