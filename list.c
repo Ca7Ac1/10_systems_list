@@ -71,6 +71,11 @@ struct Location *free_list(struct Location *l)
 
 struct Location *remove_node(struct Location *l, char *name, float latitude, float longitude)
 {
+	if (l == NULL)
+	{
+		return l;
+	}
+
 	struct Location *head = l;
 	if (equal(l, name, latitude, longitude))
 	{
@@ -91,7 +96,7 @@ struct Location *remove_node(struct Location *l, char *name, float latitude, flo
 			break;
 		}
 
-        l = l->next;
+        	l = l->next;
 	}
 	
 	return head;
