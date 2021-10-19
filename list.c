@@ -1,14 +1,9 @@
+#include <string.h>
+#include <stdlib.h>
+
 #include "list.h"
 
 #define abs(a) a > 0 ? a : -1 * a
-
-struct Location
-{
-    char name[30];
-    float latitude;
-    float longitude;
-    struct Location *next;
-};
 
 int equal(const struct Location *a, char *name, float latitude, float longitude)
 {

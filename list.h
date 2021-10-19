@@ -1,7 +1,6 @@
 #ifndef LIST_H
 #define LIST_H
 
-
 struct Location
 {
     char name[30];
