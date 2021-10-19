@@ -13,6 +13,13 @@ struct Location
     struct Location *next;
 };
 
+bool equal(const struct Location *a, const struct Location *b)
+{
+	return strcmp(a->name, b->name) == 0 && 
+		   a->latitude == b->latitude &&
+		   a->longitude == b->longitude;
+}
+
 struct Location *makeLocation(char *name, float latitude, float longitude)
 {
     struct Location *l = malloc(sizeof(struct Location));
@@ -65,6 +72,37 @@ struct Location *free_list(struct Location *l)
     }
 
     return front;
+}
+
+struct Location *remove(struct Location *l, struct Location *a)
+{
+	struct Location *head = l;
+	if (equal(l, a))
+	{
+		head = head->next;
+		free(l);
+		
+		return head;
+	}
+	
+	if (a == NULL)
+	{
+		return head;
+	}
+	
+	while (l->next)
+	{
+		if (equal(l->next, a))
+		{
+			struct Location *temp = l->next;
+			l->next = l->next->next; 
+			free(temp);
+			
+			break;
+		}
+	}
+	
+	return head;
 }
 
 int main()
