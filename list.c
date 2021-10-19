@@ -66,7 +66,7 @@ struct Location *free_list(struct Location *l)
         free(prev);
     }
 
-    return front;
+    return NULL;
 }
 
 struct Location *remove_node(struct Location *l, char *name, float latitude, float longitude)
