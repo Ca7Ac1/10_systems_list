@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "list.h"
 
@@ -89,6 +90,8 @@ struct Location *remove_node(struct Location *l, char *name, float latitude, flo
 			
 			break;
 		}
+
+        l = l->next;
 	}
 	
 	return head;
