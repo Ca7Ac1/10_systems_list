@@ -15,13 +15,13 @@ int main()
 
     print_list(list);
 
-    remove_node(list, "China", 35.8617, -104.1954);
+    list = remove_node(list, "China", 35.8617, -104.1954);
     print_list(list);
 
-    remove_node(list, list->name, list->latitude, list->longitude);
+    list = remove_node(list, list->name, list->latitude, list->longitude);
     print_list(list);
 
 
-    free_list(list);
+    list = free_list(list);
     print_list(list);
 }
